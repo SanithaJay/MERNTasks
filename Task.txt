@@ -5,3 +5,34 @@ Question
    -------------------------------------------------------------------
         const fs=require("fs");
         fs.writeFileSync('sanitha.txt', "Name:Sanitha\nCourse:MERN")
+
+
+Date:28/08/24
+Question
+*********
+1. Create a server that response with heading, image,paragraph,inputfield,button etc
+   -------------------------------------------------------------------
+        const http=require("http");
+         function requestParameterCB(req,res){
+            console.log("server1");
+            console.log("REQUEST url:",req.url);
+            console.log("REQUEST method",req.method); 
+            console.log("REQUEST headers",req.headers);
+
+            res.setHeader("Content-Type","text/html")
+            res.write("<html>");
+            res.write("<head><title>Node</title></head>");
+            res.write("<body>");
+            res.write("<h1>WELCOME TO NODE.JS</h1>");
+            res.write("<img src='/node.png' alt='node.js' />");
+            res.write("<h3>Difference b/w process.exit() & process.exitCode()</h3>");
+            res.write("<p><b> process.exit():</b> Immediately terminates the Node.js process with the specified exit code. Asynchronous operations might be interrupted.</p>")
+            res.write("<p><b>process.exitCode:</b> Sets the exit code that will be used when the process eventually exits naturally. The process will not exit immediately and will wait for ongoing operations to complete.</p>")
+            res.write("<form><input type='email' placeholder='Email*'/> <input type='button' value='Subscribe'/></form>")
+            res.write("</body>")
+            res.write("</html>");
+            res.end();
+}
+const server=http.createServer(requestParameterCB)
+server.listen(3000);
+
