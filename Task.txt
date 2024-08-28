@@ -1,0 +1,7 @@
+Date:27/08/24
+Question
+*********
+1. Create a file using writeFileSync with your name and save your data
+   -------------------------------------------------------------------
+        const fs=require("fs");
+        fs.writeFileSync('sanitha.txt', "Name:Sanitha\nCourse:MERN")
